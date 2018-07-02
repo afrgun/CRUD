@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="#">Technical Test - Frontend Developer</a>
+</nav>
+
+<button type="button" class="btn btn-info float-right btn-cstm" [routerLink]="['ContactAdd']">Add Contact</button>
+<div class="content">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">address</th>
+        <th scope="col">email</th>
+        <th scope="col">phone</th>
+        <th scope="col">picture</th>
+        <th scope="col">version</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts; let i = index">
+        <th>{{contact.id}}</th>
+        <th>{{contact.name}}</th>
+        <td>{{contact.address}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phone}}</td>
+        <td>{{contact.picture}}</td>
+        <td>{{contact.version}}</td>
+        <td class="grp-action">
+          <button class="btn btn-warning" (click)="updateContact(contact)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteContact(contact.id)">Delete</button>
+        </td>
+      </tr>
+  </table>
+</div>

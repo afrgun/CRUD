@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="#">Technical Test - Frontend Developer</a>
+</nav>
+
+<div class="content">
+  <div class="wrap-form">
+    <div *ngIf="successAlert" class="alert alert-success" role="alert">
+      Data Berhasil disimpan.
+    </div>
+    <form [formGroup]="formAdd" (ngSubmit)="submitForm(formAdd.value)">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formAdd.controls['id'].valid && formAdd.controls['id'].touched}"
+            [formControl]="formAdd.controls['id']">
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formAdd.controls['name'].valid && formAdd.controls['name'].touched}"
+            [formControl]="formAdd.controls['name']">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formAdd.controls['address'].valid && formAdd.controls['address'].touched}"
+            [formControl]="formAdd.controls['address']">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formAdd.controls['email'].valid && formAdd.controls['email'].touched}"
+            [formControl]="formAdd.controls['email']">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formAdd.controls['phone'].valid && formAdd.controls['phone'].touched}"
+            [formControl]="formAdd.controls['phone']">
+          </div>
+          <div class="form-group">
+            <label>Picture</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formAdd.controls['picture'].valid && formAdd.controls['picture'].touched}"
+            [formControl]="formAdd.controls['picture']">
+          </div>
+          <div class="form-group">
+            <label>Version</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formAdd.controls['version'].valid && formAdd.controls['version'].touched}"
+            [formControl]="formAdd.controls['version']">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formAdd.valid">Submit</button>
+      
+    </form>
+  </div>
+</div>

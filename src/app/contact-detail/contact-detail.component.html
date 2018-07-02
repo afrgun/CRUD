@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="#">Technical Test - Frontend Developer</a>
+</nav>
+
+<div class="content">
+  <div class="wrap-form">
+    <div *ngIf="successAlert" class="alert alert-success" role="alert">
+      Data Berhasil diedit.
+    </div>
+    <form [formGroup]="formEdit" (ngSubmit)="submitForm(formEdit.value)">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Id</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formEdit.controls['id'].valid && formEdit.controls['id'].touched}"
+            [formControl]="formEdit.controls['id']">
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formEdit.controls['name'].valid && formEdit.controls['name'].touched}"
+            [formControl]="formEdit.controls['name']">
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <input type="text" class="form-control" 
+            [ngClass]="{'has-error':!formEdit.controls['address'].valid && formEdit.controls['address'].touched}"
+            [formControl]="formEdit.controls['address']">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formEdit.controls['email'].valid && formEdit.controls['email'].touched}"
+            [formControl]="formEdit.controls['email']">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formEdit.controls['phone'].valid && formEdit.controls['phone'].touched}"
+            [formControl]="formEdit.controls['phone']">
+          </div>
+          <div class="form-group">
+            <label>Picture</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formEdit.controls['picture'].valid && formEdit.controls['picture'].touched}"
+            [formControl]="formEdit.controls['picture']">
+          </div>
+          <div class="form-group">
+            <label>Version</label>
+            <input type="text" class="form-control"
+            [ngClass]="{'has-error':!formEdit.controls['version'].valid && formEdit.controls['version'].touched}"
+            [formControl]="formEdit.controls['version']">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formEdit.valid">Submit</button>
+      
+    </form>
+  </div>
+</div>

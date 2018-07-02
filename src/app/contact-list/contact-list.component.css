@@ -1,0 +1,14 @@
+.grp-action{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.grp-action button{ margin: 0 5px;}
+
+.btn-cstm{
+    margin: 20px;
+}
